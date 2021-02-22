@@ -1,3 +1,4 @@
+# V1.1
 FROM ubuntu:18.04
 
 RUN apt-get clean && \
@@ -87,7 +88,7 @@ RUN apt-get clean && \
 
 #
 RUN cd $HOME && \
-    mkdir - downloads && \
+    mkdir -p downloads && \
     cd downloads && \
     wget -O rocminstall.py --no-check-certificate https://raw.githubusercontent.com/srinivamd/rocminstaller/master/rocminstall.py && \
     python3 ./rocminstall.py --nokernel --rev 4.0.1 --nomiopenkernels

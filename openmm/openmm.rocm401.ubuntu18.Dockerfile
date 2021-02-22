@@ -1,9 +1,12 @@
+# V1.1
 FROM ubuntu:18.04
 
+#
 RUN apt-get clean && \
     apt-get -y update --fix-missing --allow-insecure-repositories && \
     DEBIAN_FRONTEND=noninteractive apt-get install -y \
     aria2 \
+    autoconf \
     bison \
     bzip2 \
     check \
@@ -64,21 +67,6 @@ RUN apt-get clean && \
         pip install numpy && \
         pip install setuptools && \
         pip install CppHeaderParser argparse && \
-    wget --no-check-certificate http://sourceforge.net/projects/half/files/latest/download && \
-    mv download download.zip && \
-    unzip download.zip -d half && \
-    mv half /usr/include && \
-    cd $HOME && rm -rf $HOME/rough && \
-    cd /tmp && \
-    wget https://github.com/opencv/opencv/archive/3.4.0.zip && unzip 3.4.0.zip && \
-    rm *.zip && \
-    mkdir build && \
-    cd /tmp/build && \
-    cmake -DWITH_OPENCL=OFF -DWITH_OPENCLAMDFFT=OFF -DWITH_OPENCLAMDBLAS=OFF -DWITH_VA_INTEL=OFF -DWITH_OPENCL_SVM=OFF ../opencv-3.4.0 && \
-    make -j12 && \
-    make install && \
-    ldconfig && \
-    cd $HOME && \
     ldconfig && \
     cd $HOME && \
     apt-get clean && \
@@ -86,7 +74,7 @@ RUN apt-get clean && \
 
 #
 RUN cd $HOME && \
-    mkdir - downloads && \
+    mkdir -p downloads && \
     cd downloads && \
     wget -O rocminstall.py --no-check-certificate https://raw.githubusercontent.com/srinivamd/rocminstaller/master/rocminstall.py && \
     python3 ./rocminstall.py --nokernel --rev 4.0.1 --nomiopenkernels
