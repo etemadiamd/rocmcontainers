@@ -1,10 +1,11 @@
-# V1.1
+# V1.2
 FROM ubuntu:18.04
 
 RUN apt-get clean && \
     apt-get -y update --fix-missing --allow-insecure-repositories && \
     DEBIAN_FRONTEND=noninteractive apt-get install -y \
     aria2 \
+    autoconf \
     bison \
     bzip2 \
     check \
