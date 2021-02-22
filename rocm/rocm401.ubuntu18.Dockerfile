@@ -17,6 +17,7 @@ RUN apt-get clean && \
     g++-multilib \
     gcc-multilib \
     git \
+    locales \
     libatlas-base-dev \
     libboost-all-dev \
     libboost-all-dev \
@@ -91,10 +92,17 @@ RUN cd $HOME && \
     wget -O rocminstall.py --no-check-certificate https://raw.githubusercontent.com/srinivamd/rocminstaller/master/rocminstall.py && \
     python3 ./rocminstall.py --nokernel --rev 4.0.1 --nomiopenkernels
 
+#
 RUN /bin/sh -c 'ln -sf /opt/rocm-4.0.1 /opt/rocm'
+
+#
+RUN locale-gen en_US.UTF-8
 
 # Set up paths
 ENV PATH="/opt/rocm-4.0.1/bin:/opt/rocm-4.0.1/opencl/bin:${PATH}"
+ENV LANG en_US.UTF-8
+ENV LANGUAGE en_US:en
+ENV LC_ALL en_US.UTF-8
 
 # Default to a login shell
 CMD ["/bin/bash", "-l"]
