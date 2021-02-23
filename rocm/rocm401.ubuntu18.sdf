@@ -1,5 +1,6 @@
-Bootstrap: docker-daemon
-From: amdgpuce/rocm401_ubuntu18:version1
+Bootstrap: docker
+# Use docker-daemon for bootstrap above if using local docker repo
+From: amddcgpuce/rocm401_ubuntu18:version1
 
 %post
     NOW=`date`
