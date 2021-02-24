@@ -1,4 +1,4 @@
-# V1.3
+# V1.4
 FROM ubuntu:18.04
 
 RUN apt-get clean && \
@@ -22,12 +22,9 @@ RUN apt-get clean && \
     locales \
     libatlas-base-dev \
     libboost-all-dev \
-    libboost-all-dev \
     libboost-program-options-dev \
     libelf-dev \
-    libelf-dev \
     libelf1 \
-    libfftw3-dev \
     libfftw3-dev \
     libgflags-dev \
     libgoogle-glog-dev \
@@ -36,7 +33,6 @@ RUN apt-get clean && \
     liblmdb-dev \
     libnuma-dev \
     libopenblas-base \
-   libopenblas-base \
     libopenblas-dev \
     libopencv-dev \
     libpci3 \
@@ -63,10 +59,10 @@ RUN apt-get clean && \
     xsltproc && \
         pip3 install Cython && \
         pip3 install numpy && \
-        pip3 install openloop && \
+        pip3 install optionloop && \
         pip install Cython && \
         pip install numpy && \
-        pip install openloop && \
+        pip install optionloop && \
         pip install setuptools && \
         pip install CppHeaderParser argparse && \
     ldconfig && \

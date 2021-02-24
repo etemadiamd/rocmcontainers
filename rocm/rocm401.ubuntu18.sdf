@@ -1,4 +1,5 @@
 Bootstrap: docker
+# V1.1
 # Use docker-daemon for bootstrap above if using local docker repo
 From: amddcgpuce/rocm401_ubuntu18:version1
 
@@ -19,6 +20,6 @@ From: amddcgpuce/rocm401_ubuntu18:version1
     exec "$@"
 
 %help
-    singularity run rocm401.ubuntu18.sif /bin/bash -c "cp -r /opt/rocm-4.0.1/hip/samples/ $HOME/Documents"
-    singularity run rocm401.ubuntu18.sif /bin/bash -c "cd $HOME/Documents/0_Intro/bit_extract; make HIP_PATH=/opt/rocm-4.0.1/hip; ./bit_extract"
+    singularity run rocm401.ubuntu18.sif /bin/bash -c "cp -r /opt/rocm-4.0.1/hip/samples/ $HOME/Documents/"
+    singularity run rocm401.ubuntu18.sif /bin/bash -c "cd $HOME/Documents/samples/0_Intro/bit_extract; make HIP_PATH=/opt/rocm-4.0.1/hip; ./bit_extract"
 
