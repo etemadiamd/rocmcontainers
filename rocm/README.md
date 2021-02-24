@@ -1,17 +1,6 @@
 # ROCm Docker and Singularity Example
 
-### Building docker container from ROCm 4.0.1 release
-```
-
-# Download the ROCm 4.0.1 Dockerfile for Ubuntu 18.04
-wget -O rocm401.ubuntu18.Dockerfile --no-check-certificate https://raw.githubusercontent.com/amddcgpuce/rocmcontainers/main/rocm/rocm401.ubuntu18.Dockerfile
-
-# Build docker image, tag it amddcgpuce/rocm401_ubuntu18:version1
-sudo docker build -t amddcgpuce/rocm401_ubuntu18:version1 -f rocm401.ubuntu18.Dockerfile  .
-
-```
-
-### Building singularity container from ROCm 4.0.1 docker image
+### Building singularity container from ROCm 4.0.1 docker hub image
 ```
 
 # Download ROCM 4.0.1 singularity definition file, use amddcgpuce docker image
@@ -54,4 +43,15 @@ CWD: /home/USERHOME Launching: /bin/bash -c cp -r /opt/rocm-4.0.1/hip/samples/ /
   info: copy Device2Host
   info: check result
   PASSED!
+```
+
+### (Optionals) Building docker container from ROCm 4.0.1 release locally
+```
+
+# Download the ROCm 4.0.1 Dockerfile for Ubuntu 18.04
+wget -O rocm401.ubuntu18.Dockerfile --no-check-certificate https://raw.githubusercontent.com/srinivamd/rocmcontainers/main/rocm/rocm401.ubuntu18.Dockerfile
+
+# Build docker image, tag it amddcgpuce/rocm401_ubuntu18:version1
+sudo docker build -t amddcgpuce/rocm401_ubuntu18:version1 -f rocm401.ubuntu18.Dockerfile  .
+
 ```
