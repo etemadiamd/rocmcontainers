@@ -4,7 +4,7 @@
 ```
 
 # Download ROCM 4.0.1 singularity definition file, use amddcgpuce docker image
-wget -O rocm401.ubuntu18.sdf --no-check-certificate https://raw.githubusercontent.com/srinivamd/rocmcontainers/main/rocm/rocm401.ubuntu18.sdf
+wget -O rocm401.ubuntu18.sdf --no-check-certificate https://raw.githubusercontent.com/amddcgpuce/rocmcontainers/main/rocm/rocm401.ubuntu18.sdf
 
 # Build singularity image, bootstrap from amddcgpuce docker image
 # (replace path to singularity installation as appropriate)
