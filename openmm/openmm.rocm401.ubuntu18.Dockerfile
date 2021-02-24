@@ -23,12 +23,9 @@ RUN apt-get clean && \
     locales \
     libatlas-base-dev \
     libboost-all-dev \
-    libboost-all-dev \
     libboost-program-options-dev \
     libelf-dev \
-    libelf-dev \
     libelf1 \
-    libfftw3-dev \
     libfftw3-dev \
     libgflags-dev \
     libgoogle-glog-dev \
@@ -37,7 +34,6 @@ RUN apt-get clean && \
     liblmdb-dev \
     libnuma-dev \
     libopenblas-base \
-   libopenblas-base \
     libopenblas-dev \
     libopencv-dev \
     libpci3 \
@@ -70,7 +66,7 @@ RUN apt-get clean && \
     ldconfig && \
     cd $HOME && \
     apt-get clean && \
-    rm -rf /tmp/build /tmp/opencv-3.4.0 /var/lib/apt/lists/*
+    rm -rf /tmp/build /var/lib/apt/lists/*
 
 #
 RUN cd $HOME && \

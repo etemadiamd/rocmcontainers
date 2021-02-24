@@ -1,5 +1,6 @@
-Bootstrap: docker-daemon
-From: amdgpuce/openmm_rocm401_ubuntu18:version7
+Bootstrap: docker
+# V1.2
+From: amddcgpuce/openmm_rocm401_ubuntu18:version1
 
 %post
     NOW=`date`
