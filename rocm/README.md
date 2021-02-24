@@ -1,18 +1,23 @@
 # ROCm Docker and Singularity Example
 
-### Building singularity container from docker image
+### Building docker container from ROCm 4.0.1 release
 ```
 
 # Download the ROCm 4.0.1 Dockerfile for Ubuntu 18.04
 wget -O rocm401.ubuntu18.Dockerfile --no-check-certificate https://raw.githubusercontent.com/srinivamd/rocmcontainers/main/rocm/rocm401.ubuntu18.Dockerfile
 
 # Build docker image, tag it amddcgpuce/rocm401_ubuntu18:version1
-sudo docker build -t amddcgpuce/rocm401_ubuntu18:version1 - < rocm401.ubuntu18.Dockerfile
+sudo docker build -t amddcgpuce/rocm401_ubuntu18:version1 -f rocm401.ubuntu18.Dockerfile  .
 
-# Download singularity definition file for ROCm 4.0.1, uses above docker tag
+```
+
+### Building singularity container from ROCm 4.0.1 docker image
+```
+
+# Download ROCM 4.0.1 singularity definition file, use amddcgpuce docker image
 wget -O rocm401.ubuntu18.sdf --no-check-certificate https://raw.githubusercontent.com/srinivamd/rocmcontainers/main/rocm/rocm401.ubuntu18.sdf
 
-# Build singularity image, bootstrap from docker image built earlier
+# Build singularity image, bootstrap from amddcgpuce docker image
 # (replace path to singularity installation as appropriate)
 sudo /usr/local/bin/singularity build rocm401.ubuntu18.sif rocm401.ubuntu18.sdf
 
@@ -22,8 +27,10 @@ sudo /usr/local/bin/singularity build rocm401.ubuntu18.sif rocm401.ubuntu18.sdf
 ### Help
 ```
 singularity run-help rocm401.ubuntu18.sif
-    singularity run rocm401.ubuntu18.sif /bin/bash -c "cp -r /opt/rocm-4.0.1/hip/samples/ $HOME/Documents"
-    singularity run rocm401.ubuntu18.sif /bin/bash -c "cd $HOME/Documents/0_Intro/bit_extract; make HIP_PATH=/opt/rocm-4.0.1/hip; ./bit_extract"
+
+   singularity run rocm401.ubuntu18.sif /bin/bash -c "cp -r /opt/rocm-4.0.1/hip/samples/ $HOME/Documents/"
+   singularity run rocm401.ubuntu18.sif /bin/bash -c "cd $HOME/Documents/samples/0_Intro/bit_extract; make HIP_PATH=/opt/rocm-4.0.1/hip; ./bit_extract"
+
 ```
 
 ### Copy HIP samples to $HOME/Documents
