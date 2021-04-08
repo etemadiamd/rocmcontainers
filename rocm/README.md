@@ -49,7 +49,7 @@ CWD: /home/USERHOME Launching: /bin/bash -c cp -r /opt/rocm-4.0.1/hip/samples/ /
 ```
 
 # Download the ROCm 4.0.1 Dockerfile for Ubuntu 18.04
-wget -O rocm401.ubuntu18.Dockerfile --no-check-certificate https://raw.githubusercontent.com/srinivamd/rocmcontainers/main/rocm/rocm401.ubuntu18.Dockerfile
+wget -O rocm401.ubuntu18.Dockerfile --no-check-certificate https://raw.githubusercontent.com/amddcgpuce/rocmcontainers/main/rocm/rocm401.ubuntu18.Dockerfile
 
 # Build docker image, tag it amddcgpuce/rocm401_ubuntu18:version1
 sudo docker build -t amddcgpuce/rocm401_ubuntu18:version1 -f rocm401.ubuntu18.Dockerfile  .
