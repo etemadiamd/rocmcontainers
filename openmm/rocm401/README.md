@@ -3,7 +3,7 @@
 ### Build ROCm OpenMM Singularity container from amddcgpuce docker hub image
 ```
 # Download OpenMM singularity definition file for ROCm 4.0.1
-wget -O openmm.rocm401.ubuntu18.sdf --no-check-certificate https://raw.githubusercontent.com/amddcgpuce/rocmcontainers/main/openmm/openmm.rocm401.ubuntu18.sdf
+wget -O openmm.rocm401.ubuntu18.sdf --no-check-certificate https://raw.githubusercontent.com/amddcgpuce/rocmcontainers/main/openmm/rocm401/openmm.rocm401.ubuntu18.sdf
 
 # Build singularity image, bootstrap from docker image built earlier
 # (replace path to singularity installation as appropriate)
@@ -58,7 +58,7 @@ CWD: /opt/openmm/build Launching: /home/master/Documents/openmm-test/openmmtest.
 ### (Optional) Build ROCm OpenMM docker image or use image from docker hub
 ```
 # Download the ROCm 4.0.1 Dockerfile for Ubuntu 18.04
-wget -O openmm.rocm401.ubuntu18.Dockerfile --no-check-certificate https://raw.githubusercontent.com/amddcgpuce/rocmcontainers/main/openmm/openmm.rocm401.ubuntu18.Dockerfile
+wget -O openmm.rocm401.ubuntu18.Dockerfile --no-check-certificate https://raw.githubusercontent.com/amddcgpuce/rocmcontainers/main/openmm/rocm401/openmm.rocm401.ubuntu18.Dockerfile
 
 # Build docker image, tag it amddcgpuce/openmm_rocm401_ubuntu18:version1
 sudo docker build -t amddcgpuce/openmm_rocm401_ubuntu18:version1 -f openmm.rocm401.ubuntu18.Dockerfile .

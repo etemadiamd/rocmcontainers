@@ -4,7 +4,7 @@
 ```
 
 # Download LAMMPS singularity definition file, bootstrap docker
-wget -O lammps.rocm401.ubuntu18.sdf --no-check-certificate https://raw.githubusercontent.com/amddcgpuce/rocmcontainers/main/lammps/lammps.rocm401.ubuntu18.sdf
+wget -O lammps.rocm401.ubuntu18.sdf --no-check-certificate https://raw.githubusercontent.com/amddcgpuce/rocmcontainers/main/lammps/rocm401/lammps.rocm401.ubuntu18.sdf
 
 # Build singularity image, bootstrap from amddcgpuce docker image
 # (replace path to singularity installation as appropriate)
