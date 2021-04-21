@@ -7,12 +7,12 @@
 #### On Ubuntu 18/20 HWE, CentOS/RHEL 7.x, or SLES 15 SP2, use docker:
 ```
 # Launch container in interactive mode, bash shell
-sudo docker run -it --privileged --ipc=host --network=host --device=/dev/kfd --device=/dev/dri --group-add video --cap-add=SYS_PTRACE --security-opt seccomp=unconfined amddcgpuce/pytorch181-rocm410-ubuntu18 bash
+sudo docker run -it --privileged --ipc=host --network=host --device=/dev/kfd --device=/dev/dri --group-add video --cap-add=SYS_PTRACE --security-opt seccomp=unconfined amddcgpuce/pytorch181-rocm410-ubuntu18:TEST bash
 ```
 #### On CentOS/RHEL 8.x, use podman:
 ```
 # Launch container in interactive mode, bash shell
-sudo podman run -it --privileged docker://amddcgpuce/pytorch181-rocm410-ubuntu18 bash
+sudo podman run -it --privileged docker://amddcgpuce/pytorch181-rocm410-ubuntu18:TEST bash
 ```
 
 ## 2.0 Steps to build Singularity container from docker image
