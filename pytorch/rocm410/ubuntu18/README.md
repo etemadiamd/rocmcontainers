@@ -2,7 +2,7 @@
 
 ## 1.0 How to Use Docker Container
 
-### Use-case: Pytorch-1.8.1 docker based on ROCm-4.1.0 on Ubuntu18
+### Use-case: ROCm-4.1.0-based Pytorch-1.8.1 docker on Ubuntu18
 
 #### On Ubuntu 18/20 HWE, CentOS/RHEL 7.x, or SLES 15 SP2, use docker:
 ```
