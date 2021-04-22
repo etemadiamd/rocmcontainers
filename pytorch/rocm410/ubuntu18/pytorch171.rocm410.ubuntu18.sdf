@@ -2,7 +2,7 @@
 #
 
 Bootstrap: docker
-From: amddcgpuce/pytorch171-rocm410-ubuntu18:latest
+From: amddcgpuce/pytorch171-rocm410-ubuntu18
 
 %post
     NOW=`date`
