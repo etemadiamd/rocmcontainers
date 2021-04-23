@@ -1,9 +1,6 @@
 # ROCm-4.1.0-based Pytorch Container
 
 ## 1.0 How to Use Docker Container
-
-### Use-case: ROCm-4.1.0-based Pytorch-1.8.1 docker on Ubuntu18
-
 #### On Ubuntu 18/20 HWE, CentOS/RHEL 7.x, or SLES 15 SP2, use docker:
 ```
 # Launch container in interactive mode, bash shell
@@ -46,7 +43,6 @@ singularity run-help pytorch181.rocm410.ubuntu18.sif
     singularity run pytorch181.rocm410.ubuntu18.sif /bin/bash -c "cp -r /opt/pytorch-micro-benchmarking $HOME/Documents; cd $HOME/Documents/pytorch-micro-benchmarking; python3 micro_benchmarking_pytorch.py --network resnext101  --batch-size 128  --iterations 100"
     singularity run pytorch181.rocm410.ubuntu18.sif /bin/bash -c "cp -r /opt/pytorch/caffe2/python/examples $HOME/Documents; cd $HOME/Documents/examples; python3 $HOME/Documents/examples/resnet50_trainer.py --train_data null --batch_size 16 --epoch_size 1000 --num_epochs 2 --num_gpus 2"
 ```
-
 #### Running sample benchmark#1
 ```
 singularity run pytorch181.rocm410.ubuntu18.sif /bin/bash -c "cp -r /opt/pytorch-micro-benchmarking $HOME/Documents; cd $HOME/Documents/pytorch-micro-benchmarking; python3 micro_benchmarking_pytorch.py --network resnext101  --batch-size 128  --iterations 100"
