@@ -16,7 +16,7 @@ From: amddcgpuce/pytorch181-rocm420-ubuntu18
 
 %runscript
     echo "Container was created $NOW"
-    /opt/rocm-4.1.0/bin/rocminfo 2>&1 | /bin/grep "HSA Error" > /dev/null
+    /opt/rocm-4.2.0/bin/rocminfo 2>&1 | /bin/grep "HSA Error" > /dev/null
     if [ $? -eq 0 ]
     then
         echo ""
