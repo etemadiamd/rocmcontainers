@@ -5,12 +5,12 @@
 #### On Ubuntu 18/20 HWE, CentOS/RHEL 7.x, or SLES 15 SP2, use docker:
 ```
 # Launch container in interactive mode, bash shell
-sudo docker run -it --privileged --ipc=host --network=host --device=/dev/kfd --device=/dev/dri --group-add video --cap-add=SYS_PTRACE --security-opt seccomp=unconfined amddcgpuce/rocm410-ubuntu18:version1 bash
+sudo docker run -it --privileged --ipc=host --network=host --device=/dev/kfd --device=/dev/dri --group-add video --cap-add=SYS_PTRACE --security-opt seccomp=unconfined amddcgpuce/rocm410-ubuntu18 bash
 ```
 #### On CentOS/RHEL 8.x, use podman:
 ```
 # Launch container in interactive mode, bash shell
-sudo podman run -it --privileged docker://amddcgpuce/rocm410-ubuntu18:version1 bash
+sudo podman run -it --privileged docker://amddcgpuce/rocm410-ubuntu18 bash
 ```
 
 ## 2.0 Steps to build Singularity container from docker image
@@ -72,10 +72,9 @@ PASSED!
 ## 4.0 Incompatible ROCm Environment Check Message (NEW)
 ### ROCm 4.1 Kernel Modules (rock-dkms, rock-dkms-firmware) or newer is required on MI50/MI60 platforms to run ROCm 4.1 or newer user space stack 
 
-
 #### Docker Run Failure Message On Incompatible ROCm Environment
 ```
-sudo docker run -it --privileged --ipc=host --network=host --device=/dev/kfd  --device=/dev/dri --group-add video --cap-add=SYS_PTRACE --security-opt seccomp=unconfined amddcgpuce/rocm410-ubuntu18:version1 bash
+sudo docker run -it --privileged --ipc=host --network=host --device=/dev/kfd  --device=/dev/dri --group-add video --cap-add=SYS_PTRACE --security-opt seccomp=unconfined amddcgpuce/rocm410-ubuntu18 bash
 ```
 ###### Output
 ```
@@ -93,7 +92,6 @@ To install or update the driver, follow the installation instructions at:
     https://rocmdocs.amd.com/en/latest/Installation_Guide/Installation-Guide.html
 
 ```
-
 
 #### Singularity Run Failure Message On Incompatible ROCm Environment
 ```

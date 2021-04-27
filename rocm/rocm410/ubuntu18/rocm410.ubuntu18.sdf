@@ -3,7 +3,7 @@
 
 
 Bootstrap: docker
-From: sanjtrip/private-rocm410-ubuntu18:version1
+From: amddcgpuce/rocm410-ubuntu18
 
 %post
     NOW=`date`
