@@ -78,15 +78,12 @@ CWD: /opt/gromacs Launching: /bin/bash -c cd /home/USERHOME/Documents/benchmark;
 ## 4.0 Incompatible ROCm Environment Check Message (NEW)
 ### ROCm 4.1 Kernel Modules (rock-dkms, rock-dkms-firmware) or newer is required on MI50/MI60 platforms to run ROCm 4.1 or newer user space stack 
 
-
 #### Docker Run Failure Message On Incompatible ROCm Environment
 ```
 sudo docker run -it --privileged --ipc=host --network=host --device=/dev/kfd --device=/dev/dri --group-add video --cap-add=SYS_PTRACE --security-opt seccomp=unconfined amddcgpuce/gromacs-rocm410-ubuntu18 bash
 ```
 ##### Output
 ```
-Container was created Tue Apr 27 06:11:53 UTC 2021
-
 Error: Incompatible ROCm environment. The Docker container
 requires the latest kernel driver to operate correctly.
 
