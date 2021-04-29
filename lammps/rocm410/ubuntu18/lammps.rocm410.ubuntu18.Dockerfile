@@ -76,7 +76,7 @@ RUN sed -i -e "s/\/archive.ubuntu/\/us.archive.ubuntu/" /etc/apt/sources.list &&
     mkdir -p downloads && \
     cd downloads && \
     wget -O rocminstall.py --no-check-certificate https://raw.githubusercontent.com/srinivamd/rocminstaller/master/rocminstall.py && \
-    python3 ./rocminstall.py --nokernel --rev 4.1 --nomiopenkernels --repourl http://compute-artifactory.amd.com/artifactory/list/rocm-osdb-deb/compute-rocm-rel-4.1-26/ && \
+    python3 ./rocminstall.py --nokernel --rev 4.1 --nomiopenkernels && \
     cd $HOME && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* downloads
@@ -146,9 +146,9 @@ RUN cd $INSTALL_DIR && \
     cd lammps && \
     mkdir -p build && \
     cd build  && \
-    cmake -D PKG_GPU=on -D GPU_API=HIP -D HIP_ARCH=gfx906 -D CMAKE_CXX_COMPILER=hipcc \
-          -D HIP_USE_DEVICE_SORT=on -DPKG_KSPACE=yes -DPKG_RIGID=yes -DPKG_MOLECULE=yes \
-          -DPKG_MANYBODY=yes -DPKG_GRANULAR=yes -D CMAKE_INSTALL_PREFIX=/usr/local ../cmake && \
+    cmake -D PKG_GPU=on -D GPU_API=HIP -D HIP_ARCH="gfx906;gfx908"  -D CMAKE_CXX_COMPILER=hipcc \
+	  -D HIP_USE_DEVICE_SORT=on -DPKG_KSPACE=yes -DPKG_RIGID=yes -DPKG_MOLECULE=yes \
+	  -DPKG_MANYBODY=yes -DPKG_GRANULAR=yes -D CMAKE_INSTALL_PREFIX=/usr/local ../cmake && \
     make -j$(nproc) && \
     make -j$(nproc) install
 

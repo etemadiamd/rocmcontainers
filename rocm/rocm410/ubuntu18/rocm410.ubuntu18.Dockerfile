@@ -75,10 +75,10 @@ RUN sed -i -e "s/\/archive.ubuntu/\/us.archive.ubuntu/" /etc/apt/sources.list &&
     mkdir -p downloads && \
     cd downloads && \
     wget -O rocminstall.py --no-check-certificate https://raw.githubusercontent.com/srinivamd/rocminstaller/master/rocminstall.py && \
-    python3 ./rocminstall.py --nokernel --rev 4.1 --nomiopenkernels --repourl http://compute-artifactory.amd.com/artifactory/list/rocm-osdb-deb/compute-rocm-rel-4.1-26/ && \
+    python3 ./rocminstall.py --nokernel --rev 4.1 --nomiopenkernels && \
     cd $HOME && \
     apt-get clean && \
-    rm -rf /var/lib/apt/lists/*
+    rm -rf /var/lib/apt/lists/* downloads
 
 #
 RUN /bin/sh -c 'ln -sf /opt/rocm-4.1.0 /opt/rocm'
