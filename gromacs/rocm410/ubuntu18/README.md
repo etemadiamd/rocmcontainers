@@ -30,9 +30,53 @@ sudo /usr/local/bin/singularity build gromacs.rocm410.ubuntu18.sif gromacs.rocm4
 ##### On CentOS/RHEL 8 with singularity RPM installed
 ```
 sudo singularity build gromacs.rocm410.ubuntu18.sif gromacs.rocm410.ubuntu18.sdf
+	
+## 3.0 Example Usage of GROMACS Docker Container
+#### GROMACS MPI Examples
+```
+# Launch container in interactive mode, bash shell on a Ubuntu18 system
+sudo docker run -it --privileged --ipc=host --network=host --device=/dev/kfd --device=/dev/dri --group-add video --cap-add=SYS_PTRACE --security-opt seccomp=unconfined amddcgpuce/gromacs-rocm410-ubuntu18 bash
+
+# Example of adh_dodec benchmarks: 
+source /usr/local/gromacs/bin/GMXRC 
+cd /opt/gromacs/benchmark/adh_dodec
+/usr/local/gromacs/bin/gmx_mpi grompp -f pme_verlet.mdp -c conf.gro -p topol.top -maxwarn 20
+mpirun --allow-run-as-root -np 2 gmx_mpi mdrun -nsteps 100000 -resetstep 90000 -ntomp 24 -noconfout -nb gpu -bonded cpu -pme gpu -npme 1 -v -nstlist 400 -gpu_id 0 -s topol.tpr
+
+# Example of stmv benchmarks: 
+source /usr/local/gromacs/bin/GMXRC 
+cd /opt/gromacs/benchmark/stmv
+/usr/local/gromacs/bin/gmx_mpi grompp -f pme_verlet.mdp -c stmv.gro -p stmv.top -maxwarn 20
+mpirun --allow-run-as-root -np 2 gmx_mpi mdrun -nsteps 100000 -resetstep 90000 -ntomp 24 -noconfout -nb gpu -bonded cpu -pme gpu -npme 1 -v -nstlist 400 -gpu_id 0 -s topol.tpr
+
+# Example of cellulose_nve benchmarks: 
+source /usr/local/gromacs/bin/GMXRC 
+cd /opt/gromacs/benchmark/cellulose_nve
+/usr/local/gromacs/bin/gmx_mpi grompp -f pme_verlet.mdp -c cellulose_nve.gro -p cellulose_nve.top -maxwarn 20
+mpirun --allow-run-as-root -np 2 gmx_mpi mdrun -nsteps 100000 -resetstep 90000 -ntomp 24 -noconfout -nb gpu -bonded cpu -pme gpu -npme 1 -v -nstlist 400 -gpu_id 0 -s topol.tpr
+```
+#### GROMACS Threaded MPI Examples
+```
+# Example of adh_dodec benchmarks: 
+source /usr/local/gromacs/bin/GMXRC 
+cd /opt/gromacs/benchmark/adh_dodec
+/usr/local/gromacs/bin/gmx grompp -f pme_verlet.mdp -c conf.gro -p topol.top -maxwarn 20
+gmx mdrun -v -nsteps 100000 -resetstep 90000 -noconfout -ntmpi 2 -ntomp 28 -nb gpu -bonded gpu -pme gpu -npme 1 -nstlist 400 -gpu_id 0 -s topol.tpr
+
+# Example of stmv benchmarks: 
+source /usr/local/gromacs/bin/GMXRC 
+cd /opt/gromacs/benchmark/stmv
+/usr/local/gromacs/bin/gmx grompp -f pme_verlet.mdp -c stmv.gro -r stmv.gro -p stmv.top -o stmv.tpr
+gmx mdrun -v -nsteps 100000 -resetstep 90000 -noconfout -ntmpi 2 -ntomp 28 -nb gpu -bonded gpu -pme gpu -npme 1 -nstlist 400 -gpu_id 0 -s stmv.tpr
+
+# Example of cellulose_nve benchmarks: 
+source /usr/local/gromacs/bin/GMXRC 
+cd /opt/gromacs/benchmark/cellulose_nve
+/usr/local/gromacs/bin/gmx grompp -f pme_verlet.mdp -c cellulose_nve.gro -r cellulose_nve.gro -p cellulose_nve.top -o nve.tpr
+gmx mdrun -v -nsteps 100000 -resetstep 90000 -noconfout -ntmpi 2 -ntomp 28 -nb gpu -bonded gpu -pme gpu -npme 1 -nstlist 400 -gpu_id 0 -s nve.tpr
 ```
 
-## 3.0 Example Usage of Gromacs Singularity Container
+## 4.0 Example Usage of Gromacs Singularity Container
 #### Run Help
 ```
 singularity run-help gromacs.rocm410.ubuntu18.sif
@@ -75,7 +119,7 @@ CWD: /opt/gromacs Launching: /bin/bash -c cd /home/USERHOME/Documents/benchmark;
 ...output snipped...
 ```
 
-## 4.0 Incompatible ROCm Environment Check Message (NEW)
+## 5.0 Incompatible ROCm Environment Check Message (NEW)
 ### ROCm 4.1 Kernel Modules (rock-dkms, rock-dkms-firmware) or newer is required on MI50/MI60 platforms to run ROCm 4.1 or newer user space stack 
 
 #### Docker Run Failure Message On Incompatible ROCm Environment
