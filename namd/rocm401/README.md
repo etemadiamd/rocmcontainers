@@ -1,3 +1,6 @@
+```
+# Copyright (c) 2021 Advanced Micro Devices, Inc. All Rights Reserved.
+```
 # ROCm-based NAMD Singularity Container Example With ROCm 4.0.1
 
 ### Building NAMD singularity container from amddcgpuce docker image

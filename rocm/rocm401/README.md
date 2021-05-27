@@ -1,3 +1,6 @@
+```
+# Copyright (c) 2021 Advanced Micro Devices, Inc. All Rights Reserved.
+```
 # ROCm Docker and Singularity Example
 
 ### Building singularity container from ROCm 4.0.1 docker hub image

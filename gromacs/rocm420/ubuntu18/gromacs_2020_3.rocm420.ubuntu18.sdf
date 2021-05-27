@@ -1,5 +1,6 @@
-# V1.2 ROCM-4.2.0 GROMACS Singularity Container Definition file for Ubuntu18
+# Copyright (c) 2021 Advanced Micro Devices, Inc. All Rights Reserved.
 #
+# V1.2 ROCM-4.2.0 GROMACS Singularity Container Definition file for Ubuntu18
 
 Bootstrap: docker
 From: amddcgpuce/gromacs_2020_3-rocm420-ubuntu18

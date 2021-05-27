@@ -1,4 +1,7 @@
-# V1.4
+# Copyright (c) 2021 Advanced Micro Devices, Inc. All Rights Reserved.
+#
+# V1.4 - Dockerfile for ROCm-4.0.1
+
 FROM ubuntu:18.04
 
 RUN apt-get clean && \

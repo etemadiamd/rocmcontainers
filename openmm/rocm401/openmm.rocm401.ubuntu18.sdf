@@ -1,5 +1,8 @@
+# Copyright (c) 2021 Advanced Micro Devices, Inc. All Rights Reserved.
+#
+# V1.2 - OpenMM Singularity Definition File
+
 Bootstrap: docker
-# V1.2
 From: amddcgpuce/openmm_rocm401_ubuntu18:version1
 
 %post

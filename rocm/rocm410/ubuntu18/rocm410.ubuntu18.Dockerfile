@@ -1,3 +1,5 @@
+# Copyright (c) 2021 Advanced Micro Devices, Inc. All Rights Reserved.
+#
 # V1.3 ROCm-4.1.0 Dockerfile for Ubuntu18
 
 FROM ubuntu:18.04

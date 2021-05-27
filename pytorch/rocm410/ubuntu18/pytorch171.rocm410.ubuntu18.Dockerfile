@@ -1,3 +1,5 @@
+# Copyright (c) 2021 Advanced Micro Devices, Inc. All Rights Reserved.
+#
 # V1.4 ROCm-4.1.0 Pytorch-1.7.1 Dockerfile for Ubuntu18
 
 FROM ubuntu:18.04

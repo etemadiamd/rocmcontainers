@@ -1,5 +1,6 @@
-# V1.1 ROCM-4.1.0-based Pytorch-1.7.1 Singularity Container Definition file for Ubuntu18
+# Copyright (c) 2021 Advanced Micro Devices, Inc. All Rights Reserved.
 #
+# V1.1 ROCM-4.1.0-based Pytorch-1.7.1 Singularity Container Definition file for Ubuntu18
 
 Bootstrap: docker
 From: amddcgpuce/pytorch171-rocm410-ubuntu18
