@@ -1,5 +1,6 @@
-# V1.4 ROCM-4.2.0 OpenMM HPC Application Dockerfile
+# Copyright (c) 2021 Advanced Micro Devices, Inc. All Rights Reserved.
 #
+# V1.4 ROCM-4.2.0 OpenMM HPC Application Dockerfile
 
 FROM ubuntu:18.04
 

@@ -1,6 +1,9 @@
-Bootstrap: docker
-# V1.1
+# Copyright (c) 2021 Advanced Micro Devices, Inc. All Rights Reserved.
+#
+# V1.1 - ROCm-4.0.1 Singularity Definition File
 # Use docker-daemon for bootstrap above if using local docker repo
+
+Bootstrap: docker
 From: amddcgpuce/rocm401_ubuntu18:version1
 
 %post

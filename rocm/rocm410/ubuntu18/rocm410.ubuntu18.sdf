@@ -1,6 +1,7 @@
-# V1.1 ROCM-4.1.0 GROMACS Singularity Container Definition file for Ubuntu18
-# V1.0 ROCM-4.0.1 GROMACS Singularity Container Definition file for Ubuntu18
-
+# Copyright (c) 2021 Advanced Micro Devices, Inc. All Rights Reserved.
+#
+# V1.1 ROCM-4.1.0 Singularity Container Definition file for Ubuntu18
+# V1.0 ROCM-4.0.1 Singularity Container Definition file for Ubuntu18
 
 Bootstrap: docker
 From: amddcgpuce/rocm410-ubuntu18

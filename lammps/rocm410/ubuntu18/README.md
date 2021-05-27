@@ -1,3 +1,6 @@
+```
+# Copyright (c) 2021 Advanced Micro Devices, Inc. All Rights Reserved.
+```
 # ROCm-4.1.0-based LAMMPS Container
 
 ## 1.0 How to Use Docker Container

@@ -1,3 +1,6 @@
+```
+# Copyright (c) 2021 Advanced Micro Devices, Inc. All Rights Reserved.
+```
 # OpenMM ROCm Docker and Singularity Example
 
 ### Build ROCm OpenMM Singularity container from amddcgpuce docker hub image

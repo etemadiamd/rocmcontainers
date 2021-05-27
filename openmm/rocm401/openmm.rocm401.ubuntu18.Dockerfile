@@ -1,4 +1,7 @@
-# V1.1
+# Copyright (c) 2021 Advanced Micro Devices, Inc. All Rights Reserved.
+#
+#V1.1 - ROCM-4.0.1 based OpenMM Dockerfile
+
 FROM ubuntu:18.04
 
 #

@@ -1,4 +1,7 @@
 #!/bin/bash
+#
+# Copyright (c) 2021 Advanced Micro Devices, Inc. All Rights Reserved.
+#
 # Check the compatibility of ROCm-Kernel Version
 
 /opt/rocm-4.1.0/bin/rocminfo 2>&1 | /bin/grep "HSA Error" > /dev/null

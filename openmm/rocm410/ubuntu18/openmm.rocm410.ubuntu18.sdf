@@ -1,5 +1,6 @@
-# V1.3 - ROCm-4.1.0 OPENMM Singularity Definition File for Ubuntu18
+# Copyright (c) 2021 Advanced Micro Devices, Inc. All Rights Reserved.
 #
+# V1.3 - ROCm-4.1.0 OPENMM Singularity Definition File for Ubuntu18
 
 Bootstrap: docker
 From: amddcgpuce/openmm-rocm410-ubuntu18

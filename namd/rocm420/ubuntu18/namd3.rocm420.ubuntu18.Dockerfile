@@ -1,3 +1,5 @@
+# Copyright (c) 2021 Advanced Micro Devices, Inc. All Rights Reserved.
+#
 # V1.4 ROCm-4.2.0 NAMD-3.0 HPC Application Dockerfile
 
 FROM ubuntu:18.04
