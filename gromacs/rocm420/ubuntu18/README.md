@@ -23,7 +23,7 @@ sudo podman run -it --privileged docker://amddcgpuce/gromacs_2020_3-rocm420-ubun
 #### Download Singularity Definition File
 ```
 # Download Singularity Definition file
-wget -O gromacs_2020_3-rocm420.ubuntu18.sdf --no-check-certificate https://raw.githubusercontent.com/amddcgpuce/rocmcontainers/main/gromacs/rocm420/ubuntu18/gromacs_2020_3.rocm420.ubuntu18.sdf
+wget -O gromacs_2020_3.rocm420.ubuntu18.sdf --no-check-certificate https://raw.githubusercontent.com/amddcgpuce/rocmcontainers/main/gromacs/rocm420/ubuntu18/gromacs_2020_3.rocm420.ubuntu18.sdf
 ```
 #### Build Singularity Image File (SIF)
 ##### On Ubuntu 18.04/20.04 HWE with singularity installed under /usr/local/bin
