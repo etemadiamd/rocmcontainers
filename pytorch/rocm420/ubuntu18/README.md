@@ -16,8 +16,8 @@ sudo podman run -it --privileged docker://amddcgpuce/pytorch181-rocm420-ubuntu18
 ```
 ##### Image Name + Tag | Description
 ```
-    pytorch181-rocm420-ubuntu18:version1   -->   Pytorch v1.8.1 based on ROCm v4.2.0 On Ubuntu18 (Version 1)
-    pytorch171-rocm420-ubuntu18:version1   -->   Pytorch v1.7.1 based on ROCm v4.2.0 On Ubuntu18 (Version 1)
+    pytorch181-rocm420-ubuntu18   -->   Pytorch v1.8.1 based on ROCm v4.2.0 On Ubuntu18
+    pytorch180-rocm420-ubuntu18   -->   Pytorch v1.8.0 based on ROCm v4.2.0 On Ubuntu18
 ```
 
 ## 2.0 Steps to build Singularity container from docker image
