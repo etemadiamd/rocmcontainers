@@ -1,0 +1,26 @@
+# V1.4 ROCM-4.3.1 Singularity Container Definition file for Ubuntu18
+
+
+Bootstrap: docker
+From: amddcgpuce/rocm431-ubuntu18
+
+%post
+    NOW=`date`
+    echo "export NOW=\"${NOW}\"" >> $SINGULARITY_ENVIRONMENT
+
+%environment
+    export PATH=/opt/rocm/bin:/opt/rocm/opencl/bin:$PATH
+    export LANGUAGE=en_US.UTF-8
+    export LANG=en_US.UTF-8
+    export LC_ALL=en_US.UTF-8
+
+%runscript
+    echo "Container was created $NOW"
+    cd $HOME
+    echo "CWD: $HOME Launching: $*"
+    exec "$@"
+
+%help
+    singularity run rocm431.ubuntu18.sif /bin/bash -c "cp -r /opt/rocm/hip/samples/ $HOME/Documents/"
+    singularity run rocm431.ubuntu18.sif /bin/bash -c "cd $HOME/Documents/samples/0_Intro/bit_extract; make HIP_PATH=/opt/rocm/hip; ./bit_extract"
+
