@@ -13,12 +13,12 @@
 echo "Date:`date`"
 
 echo "==== Pull OpenMM docker image  ===="
-echo "sudo docker pull amdih/openmm:7.7.0_49"
-sudo docker pull amdih/openmm:7.7.0_49
+echo "docker pull amdih/openmm:7.7.0_49"
+docker pull amdih/openmm:7.7.0_49
 echo "==== Pull complete  ===="
 
 echo "==== Run OpenMM docker image in a noninteractive way  ===="
-echo "sudo docker run --rm -it --ipc=host --device=/dev/kfd --device=/dev/dri --security-opt seccomp=unconfined amdih/openmm:7.7.0_49 run-benchmarks"
-sudo docker run --rm -it --ipc=host --device=/dev/kfd --device=/dev/dri --security-opt seccomp=unconfined amdih/openmm:7.7.0_49 run-benchmarks
+echo "docker run --rm -it --ipc=host --device=/dev/kfd --device=/dev/dri --security-opt seccomp=unconfined amdih/openmm:7.7.0_49 run-benchmarks"
+docker run --rm -it --ipc=host --device=/dev/kfd --device=/dev/dri --security-opt seccomp=unconfined amdih/openmm:7.7.0_49 run-benchmarks
 echo "==== Run complete ===="
 
