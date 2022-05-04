@@ -1,6 +1,6 @@
 #!/bin/sh -x
 #************************************************************************************************
-# Usage: ./run_openmm_singularity.sh                                                            *
+# Usage: sh run_openmm_singularity.sh                                                            *
 # Copyright (c) 2022 Advanced Micro Devices, Inc. All Rights Reserved.                          *
 # This script is used to run AMD Infiniy Openmm singularity commands                            *
 # Contact info: roohollah.etemadi@amd.com                                                       *
