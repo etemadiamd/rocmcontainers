@@ -1,4 +1,4 @@
-# rocmcontainers
-dockerfile, singularity definition files for ROCm and ROCm-based applications
+# README files for HPC/ML Application Containers Using ROCm
+README files for HPC/ML Application Containers built with ROCm for AMD GPUs
+Please see AMD Infinity Hub for more details
 
-## rocm401 : ROCm 4.0.1-based Containers
