@@ -11,6 +11,7 @@ V1.0: add docker and singualrity commands
 sudo docker pull amdih/rochpcg:3.1.0_97
 ```
 ## Running Containers
+### Using Docker
 If the user wants to collect figure of merit numbers on a machine containing 64-cores and one AMD GPU, it is possible to do it in the following way. Begin by launching a container interactively using:
 ```
 sudo docker run --rm -it --ipc=host --device=/dev/kfd --device=/dev/dri --security-opt seccomp=unconfined  amdih/rochpcg:3.1.0_97 /bin/bash
@@ -43,8 +44,23 @@ mpirun -np 1 hpcg 280 280 280 1860
 ```
 mpirun -np 4 hpcg 280 280 280 1860 
 ```
+### Using Singularity
+The docker image can be pulled and converted to singularity image format using:
+```
+singularity pull rochpcg3.1.0_97.sif docker://amdih/rochpcg:3.1.0_97
+```
+Then, single and four GPU runs examples can be performed as:
+```
+singularity run rochpcg3.1.0_97.sif mpirun -np 1 hpcg 280 280 280 1860
+singularity run rochpcg3.1.0_97.sif mpirun -np 4 hpcg 280 280 280 1860
+``` 
+
 ## Run Using Script
 The Docker test commands can be executed using run_hpcg3_docker.sh script. To do so, download the script and run it as follows:
 ```
 sudo sh run_hpcg3_docker.sh
+```
+Similarly, run_hpcg3_singularity.sh script runs the test using singularity commands:
+```
+sudo sh run_hpcg3_singularity.sh
 ```
