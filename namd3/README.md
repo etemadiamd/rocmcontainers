@@ -42,3 +42,8 @@ cd /examples
 namd3 stmv/stmv.namd +p4 +pemap 0-3 --CUDASOAintegrate on +devices 0,1,2,3 > stmv.log
 ```
 Benchmarking everything might take many minutes depending on how fast your computational resources are.
+## Run Using Scripts
+The tests using docker commands can be executed by running:
+```
+sudo sh run_namd3_docker.sh
+```
