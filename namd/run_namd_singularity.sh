@@ -1,0 +1,33 @@
+#!/bin/sh -x
+#************************************************************************************************
+# Usage: sudo sh run_namd_singularity.sh                                                           
+# Copyright (c) 2022 Advanced Micro Devices, Inc. All Rights Reserved.                        
+# This script is used to run AMD Infiniy NAMD singularity commands                            
+# Contact info: roohollah.etemadi@amd.com                                                      
+# Version: V1.0                                                                                  
+# Modified: 2022-05-25                                                                      
+# Version History:                                                                              
+# V1.0: run amdih/namd:2.15a2-20211101 singularity commands                                   
+#************************************************************************************************
+echo "Start Test: `date`"
+
+echo "==== Pull singularity image ===="
+echo "singularity pull namd2.15a2-20211101.sif docker://amdih/namd:2.15a2-20211101"
+singularity pull namd2.15a2-20211101.sif docker://amdih/namd:2.15a2-20211101
+echo "==== Pull complete ===="
+
+echo "==== Run test on 1 GPU ===="
+echo "singularity run --writable-tmpfs --pwd /examples namd2.15a2-20211101.sif /opt/namd/bin/namd2 jac/jac.namd +p64 +setcpuaffinity +devices 0 > jac.log"
+singularity run --writable-tmpfs --pwd /examples namd2.15a2-20211101.sif /opt/namd/bin/namd2 jac/jac.namd +p64 +setcpuaffinity +devices 0 > jac.log  
+
+echo "singularity run --writable-tmpfs --pwd /examples namd2.15a2-20211101.sif /opt/namd/bin/namd2 apoa1/apoa1.namd +p64 +setcpuaffinity +devices 0 > apoa1.log"
+singularity run --writable-tmpfs --pwd /examples namd2.15a2-20211101.sif /opt/namd/bin/namd2 apoa1/apoa1.namd +p64 +setcpuaffinity +devices 0 > apoa1.log
+
+echo "singularity run --writable-tmpfs --pwd /examples namd2.15a2-20211101.sif /opt/namd/bin/namd2 f1atpase/f1atpase.namd +p64 +setcpuaffinity +devices 0 > f1atpase.log"
+singularity run --writable-tmpfs --pwd /examples namd2.15a2-20211101.sif /opt/namd/bin/namd2 f1atpase/f1atpase.namd +p64 +setcpuaffinity +devices 0 > f1atpase.log
+
+echo "singularity run --writable-tmpfs --pwd /examples namd2.15a2-20211101.sif /opt/namd/bin/namd2 stmv/stmv.namd +p64 +setcpuaffinity +devices 0 > stmv.log"
+singularity run --writable-tmpfs --pwd /examples namd2.15a2-20211101.sif /opt/namd/bin/namd2 stmv/stmv.namd +p64 +setcpuaffinity +devices 0 > stmv.log
+echo "==== Complete test on 1 GPU ===="
+
+echo "End Test: `date`"
