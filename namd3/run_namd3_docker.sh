@@ -20,8 +20,8 @@ echo "==== Run Test on 1 GPU ===="
 echo "docker run --rm -it --ipc=host --device=/dev/kfd --device=/dev/dri -w /examples --security-opt seccomp=unconfined  amdih/namd3:3.0a9 namd3 jac/jac.namd +p1 +setcpuaffinity --CUDASOAintegrate on +devices 0 > jac.log"
 docker run --rm -it --ipc=host --device=/dev/kfd --device=/dev/dri -w /examples --security-opt seccomp=unconfined  amdih/namd3:3.0a9 namd3 jac/jac.namd +p1 +setcpuaffinity --CUDASOAintegrate on +devices 0 > jac.log
 
-echo "docker run --rm -it --ipc=host --device=/dev/kfd --device=/dev/dri -w /examples --security-opt seccomp=unconfined  amdih/namd3:3.0a9 namd3 apoa1/apoa1.namd +p1 +setcpuaffinity –-CUDASOAintegrate on +devices 0 2>&1 | tee apoa1.log"
-docker run --rm -it --ipc=host --device=/dev/kfd --device=/dev/dri -w /examples --security-opt seccomp=unconfined  amdih/namd3:3.0a9 namd3 apoa1/apoa1.namd +p1 +setcpuaffinity –-CUDASOAintegrate on +devices 0 > apoa1.log
+echo "docker run --rm -it --ipc=host --device=/dev/kfd --device=/dev/dri -w /examples --security-opt seccomp=unconfined  amdih/namd3:3.0a9 namd3 apoa1/apoa1.namd +p1 +setcpuaffinity --CUDASOAintegrate on +devices 0 > apoa1.log"
+docker run --rm -it --ipc=host --device=/dev/kfd --device=/dev/dri -w /examples --security-opt seccomp=unconfined  amdih/namd3:3.0a9 namd3 apoa1/apoa1.namd +p1 +setcpuaffinity --CUDASOAintegrate on +devices 0 > apoa1.log
 
 echo "docker run --rm -it --ipc=host --device=/dev/kfd --device=/dev/dri -w /examples --security-opt seccomp=unconfined  amdih/namd3:3.0a9 namd3 f1atpase/f1atpase.namd +p1 +setcpuaffinity --CUDASOAintegrate on +devices 0 > f1atpase.log"
 docker run --rm -it --ipc=host --device=/dev/kfd --device=/dev/dri -w /examples --security-opt seccomp=unconfined  amdih/namd3:3.0a9 namd3 f1atpase/f1atpase.namd +p1 +setcpuaffinity --CUDASOAintegrate on +devices 0 > f1atpase.log
