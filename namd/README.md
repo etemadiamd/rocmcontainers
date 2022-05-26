@@ -1,6 +1,7 @@
 ```
 Copyright (c) 2022 Advanced Micro Devices, Inc. All Rights Reserved.
-Revision: V1.0
+Revision: V1.1
+V1.1: add singularity commands
 V1.0: add docker commands 
 ```
 
@@ -35,8 +36,27 @@ Benchmarking everything might take many minutes depending on how fast your compu
 ./ns_per_day.py f1atpase.log
 ./ns_per_day.py stmv.log 
 ```
+### Using Singularity
+To run the test using Singularity, pull and convert the Docker image to Singularity image format by:
+```
+singularity pull namd2.15a2-20211101.sif docker://amdih/namd:2.15a2-20211101
+```
+Then run a Singularity container as:
+```
+sudo singularity run --writable-tmpfs namd2.15a2-20211101.sif /bin/bash
+```
+Next, the tests in the previous section can be performed inside the container. For example, the commands below run benchmark jac, and compute the FOM (figure of merit) of the test:
+```
+cd /examples
+/opt/namd/bin/namd2 jac/jac.namd +p64 +setcpuaffinity +devices 0 > jac.log
+./ns_per_day.py jac.log
+```
 ## Run Using the Scripts 
 The tests using docker commands can be performed using run_namd_docker.sh script as:
 ```
 sudo sh run_namd_docker.sh
 ``` 
+The tests using singularity commands can be ran as:
+```
+sudo sh run_namd_singularity.sh
+```
