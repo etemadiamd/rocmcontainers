@@ -1,8 +1,8 @@
 ```
 Copyright (c) 2022 Advanced Micro Devices, Inc. All Rights Reserved.
-Revision: V1.1
+Revision: V1.2
+V1.2: fixed singularity commands by removing sudo, writable-tmpfs
 V1.1: add singularity commands
-V1.0: add docker commands 
 ```
 
 # NAMD 3.0
@@ -51,7 +51,8 @@ singularity pull namd3_3.0a9.sif docker://amdih/namd3:3.0a9
 ``` 
 The singularity container runs as follows:
 ```
-sudo singularity run --writable-tmpfs namd3_3.0a9.sif /bin/bash
+singularity run  namd3_3.0a9.sif cp -r /examples ./
+singularity run --bind ./examples:/examples  namd3_3.0a9.sif /bin/bash
 ```
 Then, the benchmarks in the previous section can be executed inside the container. The following commands, for instance, run benchmark jac on a single GPU, and compute the FOM (figure of merit) for the test:  
 ```
@@ -66,5 +67,5 @@ sudo sh run_namd3_docker.sh
 ```
 Run singularity commands using run_namd3_singularity.sh as:
 ```
-sudo sh run_namd3_singularity.sh
+sh run_namd3_singularity.sh
 ```
