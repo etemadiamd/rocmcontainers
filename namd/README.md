@@ -1,8 +1,8 @@
 ```
 Copyright (c) 2022 Advanced Micro Devices, Inc. All Rights Reserved.
-Revision: V1.1
-V1.1: add singularity commands
-V1.0: add docker commands 
+Revision: V1.2
+V1.2: fixed singularity commands by removing sudo, writable-tmpfs
+V1.1: add singularity commands 
 ```
 
 # NAMD
@@ -43,7 +43,8 @@ singularity pull namd2.15a2-20211101.sif docker://amdih/namd:2.15a2-20211101
 ```
 Then run a Singularity container as:
 ```
-sudo singularity run --writable-tmpfs namd2.15a2-20211101.sif /bin/bash
+singularity run namd2.15a2-20211101.sif cp -r /examples ./
+singularity run --bind ./examples:/examples namd2.15a2-20211101.sif /bin/bash
 ```
 Next, the tests in the previous section can be performed inside the container. For example, the commands below run benchmark jac, and compute the FOM (figure of merit) of the test:
 ```
@@ -58,5 +59,5 @@ sudo sh run_namd_docker.sh
 ``` 
 The tests using singularity commands can be ran as:
 ```
-sudo sh run_namd_singularity.sh
+sh run_namd_singularity.sh
 ```
