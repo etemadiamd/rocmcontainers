@@ -1,7 +1,7 @@
 ```
 Copyright (c) 2022 Advanced Micro Devices, Inc. All Rights Reserved.
 Revision: V1.0
-V1.0: add docker and singualrity commands
+V1.0: add docker singualrity commands
 ```
 # SPECFEM3D Globe
 
@@ -41,14 +41,19 @@ This section assumes that an up-to-date version of Singularity is installed on y
 
 Pull and convert docker image to singularity image format:
 ```
-singularity pull specfem3d_globe.sif docker://amdih/specfem3d_globe:1ee10977
+singularity pull specfem3d_globe1ee10977-20210321.sif docker://amdih/specfem3d_globe:1ee10977-20210321
 ``` 
 
 Run the singularity container
 ```
-singularity run --writable-tmpfs singularity_globe.sif /bin/bash
+singularity run specfem3d_globe1ee10977-20210321.sif /bin/bash -c "cp -r /opt/specfem3d_globe ./"
+singularity run --bind ./specfem3d_globe:/opt/specfem3d_globe specfem3d_globe1ee10977-20210321.sif /bin/bash
 ```
-You can follow steps from preceding section to run an existing example within the container, for example, you may run an example:
+Then run the test inside the singularity container as:
+```
+benchmark global_s362ani_shakemovie -o /tmp/out
+```
+You can also follow steps from preceding section to run an existing example within the container, for example, you may run an example:
 ```
 cd /opt/specfem3d_globe/EXAMPLES/regional_Greece_small
 ./run_this_example.sh
@@ -61,3 +66,4 @@ sudo sh run_specfem3dglobe_docker.sh
 Similarly, the Singularity commands can be performed by running:
 ```
 sh run_specfem3dglobe_singularity.sh
+```
