@@ -165,6 +165,19 @@ mpirun_rochpl -P 2 -Q 2 -N 43008
 should all report PASSED.
 
 Please note that for successful testing, a device with at least 16GB of device memory is required.
+## Run Using Scripts
+The run_rochpl_docker.sh script runs rocHPL Docker commands on 1,2,4,8, and 16 MI210/250 GPUs as:
+```
+sudo sh run_rochpl_docker.sh
+```
+Similarly, run_rochpl_singularity.sh script performs Singularity commands as:
+```
+sh run_rochpl_singularity.sh
+``` 
+The rocHPL test can be executed using Podman commands as:
+```
+sh run_rochpl_podman.sh 
+```
 
 ## Troubleshooting
 
