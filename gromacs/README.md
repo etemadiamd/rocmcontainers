@@ -127,6 +127,9 @@ Similarly, run_gromacs_singularity.sh script executes the singularity commands b
 ```
 sh run_gromacs_singularity.sh
 ```
-
+Script run_gromacs_podman.sh executes the commands using Podman as:
+```
+sudo sh run_gromacs_podman.sh
+```
 ## Note On Performance Tuning
 Optimal performance for each benchmark and GPU/GCD configuration can be tuned by modifying the MPI ranks/threads (-ntmpi), OpenMP threads (-ntomp), GPUs (-gpu_id), neighbor list update frequency (-nstlist), and more. Users are encourage to visit https://manual.gromacs.org/documentation/current/user-guide/mdrun-performance.html for further tips and tricks.
