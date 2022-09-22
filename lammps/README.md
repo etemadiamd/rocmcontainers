@@ -1,6 +1,8 @@
 ```
 Copyright (c) 2022 Advanced Micro Devices, Inc. All Rights Reserved.
-Revision: V1.0
+Revision: V1.1
+Modified: 2022-09-22
+V1.1: add amdih/lammps:2022.5.04_130
 V1.0: add docker and singualrity commands 
 ```
 
@@ -9,13 +11,13 @@ V1.0: add docker and singualrity commands
 ## Pull Command
 
 ```
-sudo docker pull amdih/lammps:2021.5.14_121
+sudo docker pull amdih/lammps:2022.5.04_130
 ```
 
 ## Running Containers
 Launch the container using:
 ```
-sudo docker run --rm -it --ipc=host --device /dev/dri --device /dev/kfd --security-opt seccomp=unconfined -w /benchmark -e OMPI_ALLOW_RUN_AS_ROOT=1 -e OMPI_ALLOW_RUN_AS_ROOT_CONFIRM=1 amdih/lammps:2021.5.14_121 /bin/bash
+sudo docker run --rm -it --ipc=host --device /dev/dri --device /dev/kfd --security-opt seccomp=unconfined -w /benchmark -e OMPI_ALLOW_RUN_AS_ROOT=1 -e OMPI_ALLOW_RUN_AS_ROOT_CONFIRM=1 amdih/lammps:2022.5.04_130 /bin/bash
 ```
 The container contains an example benchmark problem, in the /benchmark directory, that can be executed as follows on MI200 GPUs.
 
@@ -44,13 +46,13 @@ This section assumes that an up-to-date version of Singularity is installed on y
 
 Pull and convert docker image to singularity image format:
 ```
-singularity pull lammps.sif docker://amdih/lammps:2021.5.14_121
+singularity pull lammps_2022.5.04_130.sif docker://amdih/lammps:2022.5.04_130
 ```
 You can then use examples from the preceding section to use the image on MI200 GPUs. For example, to run the benchmark problem, you may do:
 
 Launch a container:
 ```
-singularity run --pwd /benchmark --writable-tmpfs lammps.sif /bin/bash
+singularity run --pwd /benchmark --writable-tmpfs lammps_2022.5.04_130.sif /bin/bash
 ```
 Then run the benchmarks as in the previous section. For example, to run using a single GPU, use:
 ```
