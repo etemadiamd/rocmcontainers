@@ -18,7 +18,7 @@ ________________________________________
 
 | CPUs | GPUs | Operating Systems | ROCm™ Driver | Container Runtimes |
 | -----| ------ | ----------------- | ------------ | ------------------ |
-| X86_64 CPU(s) | AMD Instinct MI200 GPU(s) <br> AMD Instinct MI100 GPU(s) | Ubuntu 20.04 <br> RedHat 8 | ROCm v5.x compatibility | [Docker Engine](https://docs.docker.com/engine/install/) <br> [Singularity](https://sylabs.io/docs/) |
+| X86_64 CPU(s) | AMD Instinct MI200 GPU(s) <br> AMD Instinct MI100 GPU(s) <br> AMD Instinct MI50 GPU(s)| Ubuntu 20.04 <br> RedHat 9 | ROCm v5.x compatibility | [Docker Engine](https://docs.docker.com/engine/install/) <br> [Singularity](https://sylabs.io/docs/) |
 
 For ROCm installation procedures and validation checks, see:
 * [ROCm Installation Guide](https://docs.amd.com/).
