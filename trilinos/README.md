@@ -16,13 +16,10 @@ Trilinos is a portable toolkit for scientific computing developed at Sandia Nati
 
 ### Pull Command
 ```
-docker pull amdih/trilinos:1.7_36
+docker pull amddcgpuce/trilinos:1.7_36
 ```
-_NOTE: Internal pull command to removed before publish to InfinityHub._
+_NOTE: Internal pull command. Will work only if you have access to amddcgpuce repository_
 
-```
-docker pull 10.194.116.23:5000/aasg/trilinos:1.7_36
-```
 
 # Single-Node Server Requirements
 ________________________________________
