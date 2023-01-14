@@ -3,7 +3,11 @@
 # Usage: sh run_pyfr_singularity.sh                                                           
 # Copyright (c) 2022 Advanced Micro Devices, Inc. All Rights Reserved.                        
 # This script is used to run AMD Infiniy PyFr singularity commands                            
-# Contact info: roohollah.etemadi@amd.com                                                      
+# Contact info: roohollah.etemadi@amd.com; anand.raghavendra@amd.com                                                      
+# Version: V1.1                                                                                  
+# Modified: 2023-01-14                                                                      
+# Version History:                                                                              
+# V1.1: Added NACA0021 benchmark's singularity commands  
 # Version: V1.0                                                                                  
 # Modified: 2022-05-28                                                                      
 # Version History:                                                                              
@@ -24,11 +28,17 @@ singularity run --bind ./benchmark:/benchmark pyfr1.13.0_44.sif /bin/bash -c "ru
 
 echo "singularity run --bind ./benchmark:/benchmark pyfr1.13.0_44.sif /bin/bash -c \"run-benchmark tgv --ngpus 1\""
 singularity run --bind ./benchmark:/benchmark pyfr1.13.0_44.sif /bin/bash -c "run-benchmark tgv --ngpus 1"
+
+echo "singularity run --bind ./benchmark:/benchmark pyfr1.13.0_44.sif /bin/bash -c \"run-benchmark naca0021 --ngpus 1\""
+singularity run --bind ./benchmark:/benchmark pyfr1.13.0_44.sif /bin/bash -c "run-benchmark naca0021 --ngpus 1"
 echo "==== Complete Test on 1 GPU ===="
 
 echo "==== Run Test on 2 GPUs ===="
 echo "singularity run --bind ./benchmark:/benchmark pyfr1.13.0_44.sif /bin/bash -c \"run-benchmark tgv --ngpus 2\""
 singularity run --bind ./benchmark:/benchmark pyfr1.13.0_44.sif /bin/bash -c "run-benchmark tgv --ngpus 2"
+
+echo "singularity run --bind ./benchmark:/benchmark pyfr1.13.0_44.sif /bin/bash -c \"run-benchmark naca0021 --ngpus 2\""
+singularity run --bind ./benchmark:/benchmark pyfr1.13.0_44.sif /bin/bash -c "run-benchmark naca0021 --ngpus 2"
 echo "==== Run Test on 2 GPUs ===="
 
 echo "End Test: `date`"
