@@ -8,7 +8,7 @@ V1.0: add docker singualrity commands
 ## Pull Command
 
 ```
-sudo docker pull amdih/pyfr:1.13.0_44
+sudo docker pull amddcgpuce/pyfr:1.15.amd1_54
 ```
 ## Running Containers
 ### Using Docker
@@ -16,7 +16,7 @@ In order to assess the performance of the containerized application, standard be
 
 Begin by launching the container interactively:
 ```
-sudo docker run --rm -it --ipc=host --device=/dev/kfd --device=/dev/dri --security-opt seccomp=unconfined amdih/pyfr:1.13.0_44 /bin/bash
+sudo docker run --rm -it --ipc=host --device=/dev/kfd --device=/dev/dri --security-opt seccomp=unconfined amddcgpuce/pyfr:1.15.amd1_54 /bin/bash
 ```
 The run-benchmark script run the BFS benchmark on a single GPU as:
 ```
@@ -32,15 +32,23 @@ It is possible to run the tgv benchmark with two GPUs.
 ```
 run-benchmark tgv --ngpus 2
 ```
+For the naca0021 example, the user needs to convert the mesh to a PyFR mesh first and run it afterwards. As a convenience, this is performed in the benchmark script:
+```
+run-benchmark naca0021 --ngpus 1
+```
+It is possible to run the naca0021 benchmark with two GPUs.
+```
+run-benchmark naca0021 --ngpus 2
+```
 ### Using Singularity
 To run the test using Singularity, the docker image needs to be pulled and converted to singularity image format as:
 ```
-singularity pull pyfr1.13.0_44.sif docker://amdih/pyfr:1.13.0_44
+singularity pull pyfr_1.15.amd1_54.sif docker://amddcgpuce/pyfr:1.15.amd1_54
 ```
 Then, run the sinqularity container using:
 ```
-singularity run pyfr1.13.0_44.sif /bin/bash -c "cp -r /benchmark ./"
-singularity run --bind ./benchmark:/benchmark pyfr1.13.0_44.sif /bin/bash
+singularity run pyfr_1.15.amd1_54.sif /bin/bash -c "cp -r /benchmark ./"
+singularity run --bind ./benchmark:/benchmark pyfr_1.15.amd1_54.sif /bin/bash
 ```
 Next, run BSF and tgv benchmarks. For example, the command below run BSF on one GPU:
 ```
